@@ -11,7 +11,31 @@ const createJwtToken = (id) => {
 };
 
 // login logic
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    if (!validator.isEmail(email)) {
+      return res.json({
+        success: false,
+        message: "Please enter a valid email!",
+      });
+    }
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.json({ success: false, message: "User doesn't exists!" });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.json({ success: false, message: "Invalid Credentials!" });
+    }
+    // creating jwt token
+    const token = createJwtToken(user._id);
+    res.json({ success: true, message: "Logged in!", token });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Something went wrong!" });
+  }
+};
 
 // register logic
 const registerUser = async (req, res) => {
@@ -21,7 +45,7 @@ const registerUser = async (req, res) => {
     const exists = await userModel.findOne({ email });
     // checking if user with same email already exists
     if (exists) {
-      return res.json({ success: false, message: "User already exists" });
+      return res.json({ success: false, message: "User already exists!" });
     }
     // validating email format and strong password
     if (!validator.isEmail(email)) {
