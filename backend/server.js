@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
-import foodRouter from "./routes/food.route.js";
+import foodRouter from "./routes/foodRoute.js";
+import userRouter from "./routes/userRoute.js";
 // App config
 const app = express();
 const port = 4000;
@@ -14,14 +15,14 @@ app.use(cors());
 connectDB();
 
 // API endpoints
+// food-endpoints
 app.use("/api/food", foodRouter);
+// user-endpoints
+app.use("/api/user", userRouter);
+// endpoint to view image
 app.use("/images", express.static("uploads"));
 
-app.get("/", (req, res) => {
-  res.status(200).send("API working");
-});
-
-// Run express server
+// Running express server
 app.listen(port, () => {
   console.log(`Server runing on : http://localhost:${port}`);
 });

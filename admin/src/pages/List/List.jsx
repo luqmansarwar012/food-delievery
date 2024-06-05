@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import './List.css'
-const List = () => {
-    const url = 'http://localhost:4000'
+const List = ({ url }) => {
     const [list, setList] = useState([])
     const fetchList = async () => {
         try {

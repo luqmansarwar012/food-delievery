@@ -1,12 +1,12 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { assets } from '../../assets/assets'
 import './Add.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-const Add = () => {
+const Add = ({ url }) => {
     const [image, setImage] = useState(false)
     const [data, setData] = useState({ name: "", description: "", price: 0, category: "salad" })
-    const url = 'http://localhost:4000'
     const onChangeHandler = (e) => {
         const name = e.target.name
         const value = e.target.value

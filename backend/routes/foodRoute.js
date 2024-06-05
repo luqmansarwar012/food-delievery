@@ -3,7 +3,7 @@ import {
   addFood,
   foodList,
   removeFood,
-} from "../controllers/food.controller.js";
+} from "../controllers/foodController.js";
 import { upload } from "../config/multer.js";
 
 const foodRouter = express.Router();
