@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const Stripe = new stripe(process.env.STRIPE_SECRET_KEY);
-console.log("stripe object", Stripe);
 // placing userOrder form frontend
 const placeOrder = async (req, res) => {
   const { userId, items, amount, address } = req.body;
