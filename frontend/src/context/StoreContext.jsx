@@ -29,7 +29,8 @@ export const StoreContextProvider = (props) => {
     }
     const loadCartData = async (token) => {
         try {
-            const response = await axios.get('http://localhost:4000/api/cart/get', { headers: { token } })
+            const response =
+                await axios.get(`${url}/api/cart/get`, { headers: { token } })
             setCartItems(response.data.cartData)
         } catch (error) {
             console.log(error)
