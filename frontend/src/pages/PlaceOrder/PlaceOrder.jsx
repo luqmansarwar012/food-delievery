@@ -1,8 +1,9 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { useNavigate } from "react-router-dom";
 const PlaceOrder = () => {
     const { getTotalCartAmount, token, cartItems, food_list, url } = useContext(StoreContext)
     const [data, setData] = useState({
@@ -46,7 +47,15 @@ const PlaceOrder = () => {
             toast.error('error')
         }
     }
-
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (!token) {
+            navigate('/cart')
+        }
+        else if (getTotalCartAmount() === 0) {
+            navigate('/cart')
+        }
+    }, [token])
     return (
         <form className='place-order' onSubmit={placeOrder}>
             <div className="place-order-left">
