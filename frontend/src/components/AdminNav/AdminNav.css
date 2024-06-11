@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 4%;
+  padding: 6px 6px 6px 4px;
   border-bottom: 1.5px solid #a9a9a9;
 }
 .admin-nav .profile-logout {
@@ -16,12 +16,10 @@
   gap: 5px;
   cursor: pointer;
 }
-.admin-nav .logo {
-  padding: 10px 5px;
-  width: max(10%, 80px);
+.admin-nav .admin-logo admin_logo {
+  width: max(15%, 100px);
 }
 .admin-nav .profile {
   padding: 10px 5px;
-
   width: 40px;
 }

@@ -1,6 +1,6 @@
 import './AdminNav.css'
 import { assets } from '../../assets/assets'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContext'
 const AdminNav = () => {
@@ -15,7 +15,7 @@ const AdminNav = () => {
     }
     return (
         <div className="admin-nav">
-            <img className="logo" src={assets.admin_logo} alt="" />
+            <Link to='/admin/add'><img className="admin-logo" src={assets.admin_logo} alt="" /></Link>
             <div className='profile-logout'>
                 <img className='profile' src={assets.profile_image} alt="" />
                 <div onClick={logout} className='logout'>

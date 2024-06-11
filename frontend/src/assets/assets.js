@@ -59,7 +59,7 @@ import profile_icon from "./profile_icon.png";
 import bag_icon from "./bag_icon.png";
 import logout_icon from "./logout_icon.png";
 import parcel_icon from "./parcel_icon.png";
-import admin_logo from "./logo.png";
+import admin_logo from "./admin_logo.png";
 import add_icon from "./add_icon.png";
 import order_icon from "./order_icon.png";
 import profile_image from "./profile_image.png";

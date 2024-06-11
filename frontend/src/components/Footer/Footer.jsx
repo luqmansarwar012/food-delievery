@@ -5,8 +5,8 @@ const Footer = () => {
         <div className='footer' id='footer'>
             <div className="footer-content">
                 <div className="footer-content-left">
-                    <img src={assets.logo} alt="" />
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo repellendus, ex id nisi soluta exercitationem?</p>
+                    <h2><span>Foodie</span>Shoodie</h2>
+                    <p>Celebrate your love for great food with Foodie Shoodie, your ultimate culinary companion! Discover a world of delicious possibilities as we bring the finest flavors straight to your doorstep. From tantalizing treats to hearty meals, embark on a flavorful journey with our easy-to-use app.</p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt="" />
                         <img src={assets.twitter_icon} alt="" />
@@ -24,13 +24,13 @@ const Footer = () => {
                 </div>
                 <div className="footer-content-right">
                     <ul>
-                        <li>+971 55 937 1151</li>
-                        <li>luqmanrajput012@gmail.com</li>
+                        <li>+92 333 3333</li>
+                        <li>foodie-shoodie@gmail.com</li>
                     </ul>
                 </div>
             </div>
             <hr />
-            <p className="footeer-copyright">Copyright 2024 &copy; Tomato.com - All Rights Reserved</p>
+            <p className="footeer-copyright">Copyright 2024 &copy; foodieshoodie.com - All Rights Reserved</p>
         </div>
     )
 }
