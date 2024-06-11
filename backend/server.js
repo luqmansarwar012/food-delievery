@@ -37,7 +37,7 @@ app.use("/api/order", orderRouter);
 app.use("/images", express.static("uploads"));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hello" });
+  res.json("Hello");
 });
 
 // Running frontend build on backend server
