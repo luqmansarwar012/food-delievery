@@ -26,6 +26,7 @@ const Footer = () => {
                     <ul>
                         <li>+92 333 3333</li>
                         <li>foodie-shoodie@gmail.com</li>
+                        <li>Developer: <a href="https://github.com/luqmansarwar012">Luqman Sarwar.</a></li>
                     </ul>
                 </div>
             </div>

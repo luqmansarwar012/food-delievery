@@ -40,6 +40,9 @@
 .footer-content-left h2 span {
   color: tomato;
 }
+.footer-content-right ul li a {
+  color: tomato;
+}
 .footer-social-icons img {
   width: 40px;
   margin-right: 15px;
