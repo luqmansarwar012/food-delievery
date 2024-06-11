@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from "./pages/Verify/Verify.jsx"
 import MyOrders from "./pages/MyOrders/MyOrders.jsx"
+import Admin from "./pages/Admin/Admin.jsx"
 const App = () => {
   const [showLogin, setShowLogin] = useState(false)
   return (
@@ -20,11 +21,14 @@ const App = () => {
       <div className="app">
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
+          {/* User Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<MyOrders />} />
+          {/* Admin Panel */}
+          <Route path="/admin/*" element={<Admin />} />
         </Routes>
       </div>
       <Footer />

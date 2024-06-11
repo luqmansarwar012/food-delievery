@@ -1,13 +1,13 @@
-.navbar {
+.admin-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 4%;
   border-bottom: 1.5px solid #a9a9a9;
 }
-.navbar .logo {
+.admin-nav .logo {
   width: max(10%, 80px);
 }
-.navbar .profile {
+.admin-nav .profile {
   width: 40px;
 }
