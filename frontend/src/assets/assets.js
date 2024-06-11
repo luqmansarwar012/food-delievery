@@ -90,7 +90,7 @@ export const assets = {
   profile_image,
   upload_area,
 };
-export const url = "http://localhost:4000";
+export const url = `${window.location.origin}`;
 
 export const menu_list = [
   {

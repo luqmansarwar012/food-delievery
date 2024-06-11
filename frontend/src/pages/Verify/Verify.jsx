@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import './Verify.css'
@@ -7,7 +8,9 @@ import { toast } from 'react-toastify'
 const Verify = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const success = searchParams.get('success')
+    console.log('succcc', success)
     const orderId = searchParams.get('orderId')
+    console.log('iddddddd', orderId)
     const { url } = useContext(StoreContext)
     const navigate = useNavigate()
     const verifyPayment = async () => {

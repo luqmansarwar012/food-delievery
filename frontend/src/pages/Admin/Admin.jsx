@@ -7,7 +7,7 @@ import List from "../List/List.jsx";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Admin = () => {
-    const url = 'http://localhost:4000';
+    const url = `${window.location.origin}` || 'http://localhost:4000';
 
     return (
         <div>
