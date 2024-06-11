@@ -15,7 +15,7 @@ const port = 4000;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://localhost"],
+    origin: ["https://foodie-shoodie-app.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -35,6 +35,10 @@ app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 // endpoint to view image
 app.use("/images", express.static("uploads"));
+
+app.get("/", (req, res) => {
+  res.json({ message: "Hello" });
+});
 
 // Running frontend build on backend server
 // const __filename = fileURLToPath(import.meta.url);
