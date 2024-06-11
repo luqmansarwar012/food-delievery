@@ -30,7 +30,7 @@ const loginUser = async (req, res) => {
     }
     // creating jwt token
     const token = createJwtToken(user._id);
-    res.json({ success: true, message: "Logged in!", token });
+    res.json({ success: true, message: "Logged in!", token, role: user.role });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "Something went wrong!" });

@@ -5,9 +5,11 @@ import { assets } from '../../assets/assets'
 import { StoreContext } from "../../context/StoreContext";
 import axios from 'axios';
 import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 const LoginPopup = ({ setShowLogin }) => {
-    const { url, setToken } = useContext(StoreContext)
+    const { url, setToken, setRole } = useContext(StoreContext)
     const [currentState, setCurrentState] = useState('Login')
+    const navigate = useNavigate()
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -35,7 +37,13 @@ const LoginPopup = ({ setShowLogin }) => {
 
         if (response.data.success) {
             setToken(response.data.token)
+            setRole(response.data.role)
             localStorage.setItem('token', response.data.token)
+            localStorage.setItem('role', response.data.role)
+            setShowLogin(false)
+            if (response.data.role === 'admin') {
+                navigate('/admin/add')
+            }
             toast.success(response.data.message)
         }
         else {

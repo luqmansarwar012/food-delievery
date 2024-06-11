@@ -8,6 +8,7 @@ export const StoreContextProvider = (props) => {
     const [food_list, setFoodList] = useState([])
     const url = 'http://localhost:4000'
     const [token, setToken] = useState('')
+    const [role, setRole] = useState('')
 
     const addToCart = async (itemId) => {
         if (!cartItems[itemId]) {
@@ -60,6 +61,7 @@ export const StoreContextProvider = (props) => {
             await fetchFoodList();
             if (localStorage.getItem('token')) {
                 setToken(localStorage.getItem('token'))
+                setRole(localStorage.getItem('role'))
                 await loadCartData(localStorage.getItem('token'))
             }
         }
@@ -75,7 +77,9 @@ export const StoreContextProvider = (props) => {
         getTotalCartAmount,
         url,
         token,
-        setToken
+        setToken,
+        role,
+        setRole
     }
     return (<StoreContext.Provider value={contextValue}>
         {props.children}
