@@ -5,10 +5,11 @@ import { Routes, Route } from "react-router-dom";
 import Orders from "../Orders/Orders.jsx";
 import List from "../List/List.jsx";
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from 'react';
+import { StoreContext } from '../../context/StoreContext.jsx';
 
 const Admin = () => {
-    const url = `${window.location.origin}` || 'http://localhost:4000';
-
+    const { url } = useContext(StoreContext)
     return (
         <div>
             <div className="app-content">
